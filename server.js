@@ -13,6 +13,10 @@ server.use(express.json());
 
 // Routers
 server.use("/api/users", usersRouter);
+server.use(function(req, res, next) {
+  req.headers['if-none-match'] = 'no-match-for-this';
+  next();    
+});
 
 //Routes
 server.get("/", (req, res) => {

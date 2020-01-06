@@ -5,9 +5,21 @@ exports.seed = function(knex) {
     .then(function() {
       // Inserts seed entries
       return knex("users").insert([
-        { name: "Bob" },
-        { name: "Roenz" },
-        { name: "Joe" }
+        { 
+          location: '1st st',
+          price: '300',
+          room: '3',
+        },
+        { 
+          location: "2nd st",
+          price: '300',
+          room: '2',
+        },
+        {
+          location: "3rd st",
+          price: '300',
+          room: '1',
+        }
       ]);
     });
 };

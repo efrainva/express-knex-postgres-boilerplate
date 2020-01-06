@@ -3,7 +3,7 @@ const router = require("express").Router();
 const usersDB = require("../models/users-model.js");
 
 // GET ALL USERS
-router.get("/", async (req, res) => {
+router.get("/u", async (req, res) => {
   try {
     const users = await usersDB.find();
     res.status(200).json(users);
@@ -30,7 +30,7 @@ router.get("/:id", async (req, res) => {
 });
 
 // INSERT USER INTO DB
-router.post("/", async (req, res) => {
+router.post("/u", async (req, res) => {
   const newUser = req.body;
   if (!newUser.name) {
     res.status(404).json({ err: "Please provide the name" });
